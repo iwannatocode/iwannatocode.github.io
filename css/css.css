@@ -1,0 +1,303 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: radial-gradient( circle ,hsl(214, 47%, 23%), hsl(237, 49%, 15%) );
+}
+.top-bar{
+    border: 2px solid rgba(255, 255, 255, 0.514);
+    color: white;
+    margin: 20px auto;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 10px 20px;
+}
+li, ul{
+    list-style: none;
+}
+.score-cont{
+    width: 110px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    color: blue;
+    padding-top: 10px;
+}
+.score{
+    color: rgb(65, 64, 64);
+    font-size: 40px;
+    font-weight: 600;
+}
+.game{   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: -155px ;
+    position: relative;
+}
+.contenedor_1{  
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto ;
+    width: 400px;
+    height: 400px;
+    margin-top: 120px;
+    justify-content: center;    
+    background: url(../images/bg-pentagon.svg) no-repeat ;
+    background-size: contain;
+}
+.contenedor_22{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ficha{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border-radius: 50%;
+}
+.border{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid hsl(40, 84%, 53%);
+    position: relative;
+    z-index: 3;
+}
+.inner_botton  {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid hsl(39, 89%, 49%);
+    position: relative;
+    left: 0px;
+    top: -94px;
+    z-index: -2;
+    border-top: none;
+}
+.inner_top{
+    transform: rotateZ(45deg);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid rgba(85, 82, 82, 0.24);
+    border-right: none;
+    border-bottom: none;
+    position: relative;
+    left: 0px;
+    top: -197px;
+    z-index: 2;
+}
+.color_scissors_top{ border-color: hsl(40, 93%, 56%); }
+.color_paper_top{ border-color: hsl(230, 88%, 67%); }
+.color_rock_top{ border-color: hsl(349, 70%, 56%); }
+.color_lizard_top{ border-color: hsl(261, 72%, 63%); }
+.color_spock_top{ border-color: hsl(189, 58%, 57%); }
+
+.color_scissors_botton{ border-color: hsl(39, 94%, 46%);}
+.color_paper_botton{ border-color: hsl(230, 86%, 60%);}
+.color_rock_botton{ border-color: hsl(349, 69%, 50%); }
+.color_lizard_botton{ border-color: hsl(261, 63%, 54%); }
+.color_spock_botton{ border-color: hsl(189, 59%, 47%); }
+
+.ficha:hover{
+    background-color: rgb(194, 192, 192);
+    cursor: pointer;
+}
+.rock{
+    grid-area: 3/3/ 4/4;
+    background: white url(../images/icon-rock.svg)  17px 20px/ 60px 60px no-repeat;
+    top: 40px;
+    left: 25px;
+    transform: scale(1.3);
+}
+.paper{
+    grid-area: 2/3/ 3/4;  
+    background: white url(../images/icon-paper.svg) 17px 20px/ 60px 60px no-repeat;
+    top: -35px;
+    left: 70px;
+    transform: scale(1.3);
+}
+.scissors{ 
+    grid-area: 1/2/ 2/3;
+    background: white url(../images/icon-scissors.svg) 17px 20px/ 60px 60px no-repeat;
+    top: -30px;
+    transform: scale(1.3);
+}
+.lizard{
+    grid-area: 3/1/ 4/2;
+    background: white url(../images/icon-lizard.svg) 17px 20px/ 60px 60px no-repeat;
+    top: 40px;
+    left: -25px;
+    transform: scale(1.3);
+}
+.spock{
+    grid-area: 2/1/ 3/2;
+    background: white url(../images/icon-spock.svg) 17px 20px/ 60px 60px no-repeat;
+    top: -35px;
+    left: -70px;
+    transform: scale(1.3);
+}
+.btn{
+    width: 150px;
+    padding: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.596);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.footer{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+
+
+.random{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    animation: random 2.5s forwards; /*duration timing-function delay iteration-count direction fill-mode;*/
+}
+@keyframes random {
+    0%{ background: white url(../images/icon-spock.svg) 32px 35px/ 95px 95px no-repeat; }
+    10%{ background: white url(../images/icon-lizard.svg) 32px 35px/ 95px 95px no-repeat; }
+    20%{ background: white url(../images/icon-paper.svg) 32px 35px/ 95px 95px no-repeat; }
+    30%{ background: white url(../images/icon-rock.svg) 32px 35px/ 95px 95px no-repeat; }
+    40%{ background: white url(../images/icon-scissors.svg) 32px 35px/ 95px 95px no-repeat; }
+    50%{ background: white url(../images/icon-spock.svg) 32px 35px/ 95px 95px no-repeat; }
+    60%{ background: white url(../images/icon-lizard.svg) 32px 35px/ 95px 95px no-repeat; }
+    70%{ background: white url(../images/icon-paper.svg) 32px 35px/ 95px 95px no-repeat; }
+    80%{ background: white url(../images/icon-rock.svg) 32px 35px/ 95px 95px no-repeat; }
+    90%{ background: white url(../images/icon-scissors.svg) 32px 35px/ 95px 95px no-repeat; }
+    99%{ background: white url(../images/icon-paper.svg) 32px 35px/ 95px 95px no-repeat; }
+}
+.playerPiked{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+.text-selected{
+    position: absolute;
+    top: 250px;
+    right: 170px;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: transparent;
+    animation: appear 2.5s forwards;
+}
+.text-selected2{
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: transparent;
+    animation: appear 2.5s forwards/*duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes appear {
+    99%{ color: transparent;}
+    100%{ color: white; }       
+}
+.sometext{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    top: -40px;
+    text-align: center;
+}
+.othertext{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    top: -40px;
+    text-align: center;
+}
+.text-win{
+    font-size: 30px;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+.btn-play{
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn-play:hover{
+    background: gray;
+}
+.someDiv{
+    width: 200px;
+    padding: 40px;
+}
+@media screen and ( max-width: 510px ){
+    .contenedor_1{  
+        width: 250px;
+        height: 250px;
+        margin-top: -30px;
+    }
+    .rock{
+        top: -15px;
+        left: -30px;
+        transform: scale(0.8);
+    }
+    .paper{
+        top: -55px;
+        left: 20px;
+        transform: scale(0.8);
+    }
+    .scissors{ 
+        top: -30px;
+        transform: scale(0.8);
+    }
+    .lizard{
+        top: -15px;
+        left: 30px;
+        transform: scale(0.8);
+    }
+    .spock{
+        top: -55px;
+        left: -20px;
+        transform: scale(0.8);
+    }
+    .random{
+        transform: scale(0.7);
+    }
+    .playerPiked{
+        transform: scale(0.7);
+    }
+    .someDiv{
+        padding: 7px;
+        width: 110px;
+    }
+    .top-bar{
+        width: 80%;
+    }
+}

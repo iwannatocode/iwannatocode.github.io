@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+	<link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+	 <div id="app">
+		
+	
+	
+	<div class="top-bar">
+		<ul>
+			<li>Rock</li>
+			<li>paper</li>
+			<li>Scissors</li>
+			<li>lizard</li>
+			<li>spock</li>
+		</ul>
+		<div class="score-cont">
+			<p>score</p>
+			<div class="score">{{cont}}</div>
+		</div>
+	</div>
+
+	<section id="game" class="game">
+
+		<div v-if="seen"class="contenedor_1">
+			<div  @click="click('scissors')" class=" ficha scissors"><div class="border color_scissors_top"></div><div class="inner_botton color_scissors_botton"></div><div class="inner_top"></div></div>
+			<div  @click="click('paper')"class="ficha paper"><div class="border color_paper_top"></div><div class="inner_botton color_paper_botton"></div><div class="inner_top"></div></div>
+			<div  @click="click('rock')"class= "ficha rock"><div class="border color_rock_top"></div><div class="inner_botton color_rock_botton"></div><div class="inner_top"></div></div>
+			<div  @click="click('lizard')"class="ficha lizard"><div class="border color_lizard_top"></div><div class="inner_botton color_lizard_botton"></div><div class="inner_top"></div></div>
+			<div  @click="click('spock')"class="ficha spock"><div class="border color_spock_top"></div><div class="inner_botton color_spock_botton"></div><div class="inner_top"></div></div>
+		</div>
+
+		<div v-if="!seen" class="contenedor_2" >		
+			<!-- <p v-if="textGo" class="text-selected2" >you picked</p>
+			<p v-if="textGo" class="text-selected" >The house picked</p> -->			
+			<div class="contenedor_22">
+				<div  class="playerPiked" v-bind:style="backgrond_player" ><div class="sometext">you piked</div></div>
+				<div v-if="textResultShow" class="someDiv" >
+					<p class="text-win">{{  textResult  }}</p>
+					<button class="btn-play" @click="playAgain()">play again</button>
+				</div>
+				<div  class="random"  v-bind:style="backgrond_pc"  ><div class="othertext">The house picked</div></div>
+			</div>
+			
+		</div>
+
+	</section>
+
+	<section class="footer">
+		<botton class="btn">rules</botton>
+	</section>
+</div>
+	<!-- <div class="attribution">
+    	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    	Coded by <a href="#">Your Name Here</a>.
+  	</div> -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/js.js"></script>
+</body>
+</html>
