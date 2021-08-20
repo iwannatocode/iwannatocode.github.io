@@ -407,3 +407,13 @@ li{
 .gray2{
     border-color: #4a4a4a !important;
 }
+/* esto es para el btn de rules */
+@media screen and ( max-height: 655px ) and ( min-width: 621px ){
+    .footer{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        top: 600px;
+    }
+    
+}
