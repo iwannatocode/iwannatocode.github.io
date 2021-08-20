@@ -47,12 +47,12 @@
 			<!-- <p v-if="textGo" class="text-selected2" >you picked</p>
 			<p v-if="textGo" class="text-selected" >The house picked</p> -->			
 			<div class="contenedor_22">
-				<div  class="playerPiked" v-bind:style="backgrond_player" ><div class="sometext">you piked</div></div>
+				<div  class="playerPiked" v-bind:style="backgrond_player" ><div class="sometext">you piked</div><div class="border_select" v-bind:class="border_player"></div><div class="inner_botton_select" v-bind:class="border_inner_player"></div><div class="inner_top_select"></div></div>
 				<div v-if="textResultShow" class="someDiv" >
 					<p class="text-win">{{  textResult  }}</p>
 					<button class="btn-play" @click="playAgain()">play again</button>
 				</div>
-				<div  class="random"  v-bind:style="backgrond_pc"  ><div class="othertext">The house picked</div></div>
+				<div  class="random"  v-bind:style="backgrond_pc"  ><div class="othertext">The house picked</div><div class="border_select anima_top" v-bind:class="border_pc"></div><div class="inner_botton_select anima_bot" v-bind:class="border_inner_pc"></div><div class="inner_top_select"></div></div>
 			</div>
 			
 		</div>
@@ -60,7 +60,7 @@
 	</section>
 
 	<section class="footer">
-		<botton class="btn">rules</botton>
+		<botton class="btn" @click="rules">rules</botton>
 	</section>
 </div>
 	<!-- <div class="attribution">

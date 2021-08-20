@@ -9,7 +9,11 @@ var myapp = new Vue({
         backgrond_pc: 'padding: 1px;',
         backgrond_player: 'padding: 1px;',
         textResult : '',
-        cont: 0
+        cont: 0,
+        border_player:  '',
+        border_inner_player: '',
+        border_pc: '',
+        border_inner_pc: ''
     },
 
     methods: {  
@@ -17,7 +21,8 @@ var myapp = new Vue({
             this.seen = false;
             this.textGo = true;
             this.backgrond_player = `background: white url(images/icon-${player_piked}.svg) 32px 35px/ 95px 95px no-repeat;`;
-          
+            this.border_player = `color_${player_piked}_top`;
+            this.border_inner_player = `color_${player_piked}_botton`;
             
             let pc_piked = this.array [ Math.floor( Math.random() * 5)], result ='draw';
 
@@ -56,17 +61,23 @@ var myapp = new Vue({
             setTimeout( function(){
 
                 myapp.backgrond_pc = `background: white url(images/icon-${pc_piked}.svg) 32px 35px/ 95px 95px no-repeat;`;
-                
+                myapp.border_pc = `color_${pc_piked}_top`;
+                myapp.border_inner_pc = `color_${pc_piked}_botton`;
+
                 if( result == 'win'){
-                    myapp.backgrond_player = `background: rgb(74, 233, 87) url(images/icon-${player_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //green
-                    myapp.backgrond_pc = `background: rgb(224, 83, 83) url(images/icon-${pc_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //red
+                    myapp.backgrond_player = `background:white url(images/icon-${player_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //green
+                    myapp.backgrond_pc = `background:#cccccc url(images/icon-${pc_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //red
                     myapp.cont++;
+                    myapp.border_pc = 'gray';
+                    myapp.border_inner_pc = 'gray2';
                 }
                 else if( result == 'lose'){                     
-                    myapp.backgrond_player = `background:rgb(224, 83, 83) url(images/icon-${player_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //red
-                    myapp.backgrond_pc = `background: rgb(74, 233, 87) url(images/icon-${pc_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //green
+                    myapp.backgrond_player = `background:#cc url(images/icon-${player_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //red
+                    myapp.backgrond_pc = `background:white url(images/icon-${pc_piked}.svg) 32px 35px/ 95px 95px no-repeat;` //green
                     myapp.cont = 0;
-                }
+                    myapp.border_player =  'gray';
+                    myapp.border_inner_player = 'gray2' ;
+                } 
                 
                 myapp.textResultShow = true;
                 myapp.textResult = 'you ' + result;
@@ -76,8 +87,13 @@ var myapp = new Vue({
         },
         playAgain: function(){
             this.seen = true;
-            myapp.textResultShow = false;
+            this.textResultShow = false;
+            this.border_pc = ``;
+            this.border_inner_pc = ``;
             
+        },
+        rules: function(){
+            alert( 'Cabezona eres tu');
         }
     },
     
