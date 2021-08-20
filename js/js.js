@@ -93,7 +93,7 @@ var myapp = new Vue({
             
         },
         rules: function(){
-            alert( 'Cabezona eres tu');
+            alert( 'Mas CABEZONA eres tu');
         }
     },
     
