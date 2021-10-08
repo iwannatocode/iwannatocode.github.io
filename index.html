@@ -53,8 +53,16 @@
 					<button class="btn-play" @click="playAgain()">play again</button>
 				</div>
 				<div  class="random"  v-bind:style="backgrond_pc"  ><div class="othertext">The house picked</div><div class="border_select anima_top" v-bind:class="border_pc"></div><div class="inner_botton_select anima_bot" v-bind:class="border_inner_pc"></div><div class="inner_top_select"></div></div>
+			</div>			
+		</div>
+
+		<div id="pp" class="rule" v-if="rule" >
+			<div class="rule_cont" >
+				<div class="rule_nav"><span>Rules</span> <img class="closed" src="images/icon-close.svg" alt="ERR"  @click="closed"></div>
+				<div class="img_cont">
+					<img src="images/image-rules-bonus.svg" alt="ERR">
+				</div>
 			</div>
-			
 		</div>
 
 	</section>

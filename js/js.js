@@ -13,7 +13,8 @@ var myapp = new Vue({
         border_player:  '',
         border_inner_player: '',
         border_pc: '',
-        border_inner_pc: ''
+        border_inner_pc: '',
+        rule: false
     },
 
     methods: {  
@@ -93,9 +94,14 @@ var myapp = new Vue({
             
         },
         rules: function(){
-            alert( 'Mas CABEZONA eres tu');
+           if( !this.rule ){ this.rule = true;}
+           else this.rule = false;
+        },
+        closed: function(){
+            this.rule = false;
         }
     },
     
 
 });
+
